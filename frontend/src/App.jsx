@@ -30,9 +30,16 @@ const App = () => {
   )
 };
 
-// const Root =() =>{
-//   // check if token exist in local storage or not
+const Root =() =>{
+  // check if token exist in local storage or not
+  const isAuthenticated = !!localStorage.getItem("token");
+
+  return isAuthenticated ? (
+    <Navigate to="/dashboard"/>
+  ) :(
+    <Navigate to="/login" />
+  )
   
-// }
+}
 
 export default App 
